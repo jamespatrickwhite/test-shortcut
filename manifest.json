@@ -1,0 +1,55 @@
+{
+  "short_name": "Test-Shortcut",
+  "name": "Test of the Shortcuts API",
+  "icons": [
+    {
+      "src": "/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/?start_url",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "shortcuts": [
+    {
+      "name": "Start Counter",
+      "short_name": "Counter",
+      "url": "/counter/?shortcut",
+      "icons": [
+        { "src": "/img/icon-counter.png", "sizes": "192x192", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Check Weather",
+      "short_name": "Weather",
+      "url": "/weather/?shortcut",
+      "icons": [
+        { "src": "/img/icon-weather.png", "sizes": "192x192", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Edit Text",
+      "short_name": "TextEdit",
+      "url": "/textedit/?shortcut",
+      "icons": [
+        { "src": "/img/icon-textedit.png", "sizes": "192x192", "type": "image/png" }
+      ]
+    },
+    {
+      "name": "Check Time",
+      "short_name": "Clock",
+      "url": "/clock/?shortcut",
+      "icons": [
+        { "src": "/img/icon-clock.png", "sizes": "192x192", "type": "image/png" }
+      ]
+    }
+  ]
+}
