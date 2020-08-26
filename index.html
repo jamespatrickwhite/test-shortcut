@@ -56,6 +56,7 @@ function renderDefault() {
 
 async function main() {
   let appModule = null;
+  console.log('debug: ', location.hash);
   switch(location.hash.substr(1)) {
     case 'counter':
       appModule = await import('./counter/counter.js');
@@ -70,6 +71,7 @@ async function main() {
       appModule = await import('./clock/clock.js');
       break;
   }
+  console.log('appModule = ', appModule);
   if (appModule)
     appContainer.appendChild(new appModule.app());
   else
