@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A quick test of web shortcuts">
   <meta name="theme-color" content="#ffffff">
-  <link rel="apple-touch-icon" sizes="192x192" href="/img/icon-192.png">
-  <link rel="icon" href="/img/icon-192.png">
-  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" sizes="192x192" href="./img/icon-192.png">
+  <link rel="icon" href="./img/icon-192.png">
+  <link rel="manifest" href="./manifest.json">
   <style type="text/css">
   body {
     padding: 0;
@@ -37,7 +37,7 @@
   
 <script type="module">
 if ('serviceWorker' in navigator)
-  navigator.serviceWorker.register('/test-shortcut/sw.js');
+  navigator.serviceWorker.register('./sw.js');
 
 const appContainer = document.querySelector('.appcontainer');
 
