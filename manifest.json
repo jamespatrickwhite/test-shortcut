@@ -3,18 +3,18 @@
   "name": "Test of the Shortcuts API",
   "icons": [
     {
-      "src": "/img/icon-192.png",
+      "src": "img/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/img/icon-512.png",
+      "src": "img/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "start_url": "/?start_url",
-  "scope": "/",
+  "start_url": "index.html?start_url",
+  "scope": "/test-shortcut/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
@@ -22,33 +22,33 @@
     {
       "name": "Start Counter",
       "short_name": "Counter",
-      "url": "/counter/?shortcut",
+      "url": "index.html?shortcut#counter",
       "icons": [
-        { "src": "/img/icon-counter.png", "sizes": "192x192", "type": "image/png" }
+        { "src": "img/icon-counter.png", "sizes": "192x192", "type": "image/png" }
       ]
     },
     {
       "name": "Check Weather",
       "short_name": "Weather",
-      "url": "/weather/?shortcut",
+      "url": "index.html?shortcut#weather",
       "icons": [
-        { "src": "/img/icon-weather.png", "sizes": "192x192", "type": "image/png" }
+        { "src": "img/icon-weather.png", "sizes": "192x192", "type": "image/png" }
       ]
     },
     {
       "name": "Edit Text",
       "short_name": "TextEdit",
-      "url": "/textedit/?shortcut",
+      "url": "index.html?shortcut#textedit",
       "icons": [
-        { "src": "/img/icon-textedit.png", "sizes": "192x192", "type": "image/png" }
+        { "src": "img/icon-textedit.png", "sizes": "192x192", "type": "image/png" }
       ]
     },
     {
       "name": "Check Time",
       "short_name": "Clock",
-      "url": "/clock/?shortcut",
+      "url": "index.html?shortcut#clock",
       "icons": [
-        { "src": "/img/icon-clock.png", "sizes": "192x192", "type": "image/png" }
+        { "src": "img/icon-clock.png", "sizes": "192x192", "type": "image/png" }
       ]
     }
   ]
