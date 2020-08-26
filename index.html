@@ -1,11 +1,82 @@
 <!DOCTYPE html>
 <HTML lang="en-US">
 <HEAD>
+  <title>Shortcut Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A quick test of web shortcuts">
-  <title>Shortcut Test</title>
+  <meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="192x192" href="/img/icon-192.png">
+  <link rel="icon" href="/img/icon-192.png">
+  <link rel="manifest" href="manifest.json">
+  <style type="text/css">
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .appcontainer {
+    margin: 0.5rem;
+  }
+  
+  .pwa_install_banner {
+    background-color: lightgreen;
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding: 0.25rem 0;
+  }
+  @media all and (display-mode: standalone) {
+    .pwa_install_banner {
+      display: none;
+    }
+  }
+  </style>
 </HEAD>
 <BODY>
-Testme
+  <div class="pwa_install_banner">Install this PWA to gain additional features!</div>
+  <div class="appcontainer"></div>
+  
+<script type="module">
+if ('serviceWorker' in navigator)
+  navigator.serviceWorker.register('sw.js');
+
+const appContainer = document.querySelector('.appcontainer');
+
+function renderDefault() {
+  appContainer.appendChild(Object.assign(document.createElement('div'), { innerHTML: `
+    <div>Default page content here.</div>
+    <div>Also check out:</div>
+    <ul>
+      <li><a href="index.html#counter">The Counter</a></li>
+      <li><a href="index.html#weather">The Weather</a></li>
+      <li><a href="index.html#textedit">The Text Editor</a></li>
+      <li><a href="index.html#clock">The Clock</a></li>
+    </ul>
+  `}));
+}
+
+async function main() {
+  let appModule = null;
+  switch(location.hash.substr(1)) {
+    case 'counter':
+      appModule = await import('./counter/counter.js');
+      break;
+    case 'weather':
+      appModule = await import('./weather/weather.js');
+      break;
+    case 'textedit':
+      appModule = await import('./textedit/textedit.js');
+      break;
+    case 'clock':
+      appModule = await import('./clock/clock.js');
+      break;
+  }
+  if (appModule)
+    appContainer.appendChild(new appModule.app());
+  else
+    renderDefault();
+}
+
+main();
+</script>
 </BODY>
 </HTML>
