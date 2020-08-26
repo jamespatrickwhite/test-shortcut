@@ -46,18 +46,18 @@ function renderDefault() {
     <div>Default page content here.</div>
     <div>Also check out:</div>
     <ul>
-      <li><a href="index.html#counter">The Counter</a></li>
-      <li><a href="index.html#weather">The Weather</a></li>
-      <li><a href="index.html#textedit">The Text Editor</a></li>
-      <li><a href="index.html#clock">The Clock</a></li>
+      <li><a href="index.html?counter">The Counter</a></li>
+      <li><a href="index.html?weather">The Weather</a></li>
+      <li><a href="index.html?textedit">The Text Editor</a></li>
+      <li><a href="index.html?clock">The Clock</a></li>
     </ul>
   `}));
 }
 
 async function main() {
   let appModule = null;
-  console.log('debug: ', location.hash);
-  switch(location.hash.substr(1)) {
+  console.log('debug: ', location.search);
+  switch(location.search.substr(1)) {
     case 'counter':
       appModule = await import('./counter/counter.js');
       break;
